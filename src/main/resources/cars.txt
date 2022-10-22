@@ -1,0 +1,10 @@
+HIGH-SPEED Porsche; 911; 2.7; 330; RWD; 8-speed Porsche Doppelkupplung
+ELECTRIC TESLA; Model S; 5.8; 220; 700; 100; 5
+PICKUP Dodge; RAM 1500; 6.5; 210; 14.3
+ELECTRIC TESLA; Model 3; 7.3; 200; 350; 60; 4
+ELECTRIC Renault; Zoe; 7.7; 185; 280; 55; 4
+HIGH-SPEED Koenigsegg; Agera R; 2.8; 420; AWD; 7-speed automatic with two clutches
+HIGH-SPEED Ferrary; F40; 3.9; 320; RWD; 5-speed mechanical
+PICKUP GMC; Sierra; 7.7; 205; 17.4
+PICKUP Ford; F 150; 7.5; 210; 16.1
+HIGH-SPEED Lamborghini; Huracan; 3.4; 325; FWD; 7-speed automatic
