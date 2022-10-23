@@ -25,7 +25,7 @@ class ElectricCarHandlerImplTest {
         expected.setRange(200);
         expected.setBatteryCapacity(80);
         expected.setBatteryWarranty(5);
-        String carParameters = "ELECTRIC Nissan; LEAF; 5.2; 220; 200; 80; 5";
+        String carParameters = "Nissan; Leaf; 5.2; 220; 200; 80; 5";
         Car parsedCar = carTypeHandler.toModel(carParameters);
         Assertions.assertNotNull(parsedCar);
         Assertions.assertEquals(expected, parsedCar);

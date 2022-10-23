@@ -19,12 +19,12 @@ class PickupCarHandlerImplTest {
     @Test
     public void toModel_ValidParameters_Ok(){
         PickupCar expected = new PickupCar();
-        expected.setBrand("Nissan");
-        expected.setModel("Leaf");
-        expected.setAccelerationTime(5.2);
-        expected.setTopSpeed(220);
+        expected.setBrand("Toyota");
+        expected.setModel("Tundra");
+        expected.setAccelerationTime(7.2);
+        expected.setTopSpeed(250);
         expected.setFuelConsumption(13.3);
-        String carParameters = "PICKUP Toyota; Tundra; 7.2; 250; 13.3";
+        String carParameters = "Toyota; Tundra; 7.2; 250; 13.3";
         Car parsedCar = carTypeHandler.toModel(carParameters);
         Assertions.assertNotNull(parsedCar);
         Assertions.assertEquals(expected, parsedCar);

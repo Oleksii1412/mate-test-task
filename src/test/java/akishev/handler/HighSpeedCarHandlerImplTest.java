@@ -24,7 +24,7 @@ class HighSpeedCarHandlerImplTest {
         expected.setTopSpeed(320);
         expected.setDriveType("FWD");
         expected.setGearBox("7-speed automatic");
-        String carParameters = "HIGH-SPEED Ford; Mustang; 3.3; 320; FWD; 7-speed automatic";
+        String carParameters = "Ford; Mustang; 3.3; 320; FWD; 7-speed automatic";
         Car parsedCar = carTypeHandler.toModel(carParameters);
         Assertions.assertNotNull(parsedCar);
         Assertions.assertEquals(expected, parsedCar);

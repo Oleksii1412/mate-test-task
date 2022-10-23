@@ -41,7 +41,11 @@ public class ElectricCar extends Car {
         }
         if (electricCar.getClass().equals(ElectricCar.class)) {
             ElectricCar current = (ElectricCar) electricCar;
-            return Objects.equals(range, current.range)
+            return Objects.equals(this.getBrand(), current.getBrand())
+                    && Objects.equals(this.getModel(), current.getModel())
+                    && Objects.equals(this.getAccelerationTime(), current.getAccelerationTime())
+                    && Objects.equals(this.getTopSpeed(), current.getTopSpeed())
+                    && Objects.equals(range, current.range)
                     && Objects.equals(batteryCapacity, current.batteryCapacity)
                     && Objects.equals(batteryWarranty, current.batteryWarranty);
         }
@@ -51,6 +55,10 @@ public class ElectricCar extends Car {
     @Override
     public int hashCode() {
         int result = 17;
+        result = 31 * result + (this.getBrand() == null ? 0 : this.getBrand().hashCode());
+        result = 31 * result + (this.getModel() == null ? 0 : this.getModel().hashCode());
+        result = (int) (31 * result + this.getAccelerationTime());
+        result = 31 * result + this.getTopSpeed();
         result = 31 * result + range;
         result = 31 + result + batteryCapacity;
         result = 31 * result + batteryWarranty;
