@@ -1,12 +1,14 @@
 package akishev.service;
 
 import akishev.model.Car;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public interface CarService {
-    Car add(String line);
+    Car add(Car car);
 
-    void printAll();
+    Map<String, LinkedList<Car>> getAll();
 
     List<Car> getAllByBrand(String brand);
 

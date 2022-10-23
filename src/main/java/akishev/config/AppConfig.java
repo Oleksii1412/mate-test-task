@@ -6,6 +6,7 @@ import akishev.handler.HighSpeedCarHandlerImpl;
 import akishev.handler.PickupCarHandlerImpl;
 import akishev.model.Car;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Scanner;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +17,10 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "akishev")
 public class AppConfig {
 
+    @Bean
+    public Map<String, LinkedList<Car>> createCarMap() {
+        return new HashMap<>();
+    }
     @Bean
     public Scanner createScanner() {
         return new Scanner(System.in);

@@ -1,19 +1,26 @@
 package akishev.interaction;
 
+import akishev.mapper.CarMapper;
 import akishev.model.Car;
 import akishev.service.CarService;
 import java.util.InputMismatchException;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DataHandlerImpl implements DataHandler {
     private final CarService carService;
+    private final CarMapper carMapper;
     private final Scanner scanner;
 
-    public DataHandlerImpl(CarService carService, Scanner scanner) {
+    public DataHandlerImpl(CarService carService,
+                           CarMapper carMapper,
+                           Scanner scanner) {
         this.carService = carService;
+        this.carMapper = carMapper;
         this.scanner = scanner;
     }
 
@@ -38,22 +45,22 @@ public class DataHandlerImpl implements DataHandler {
                     case 1:
                         System.out.println("You have chosen an Option 1.");
                         System.out.println("Here, you got the entire cars catalog: ");
-                        carService.printAll();
+                        printAll(carService.getAll());
                         continue;
                     case 2:
                         System.out.println("You have chosen an Option 2.");
                         System.out.println("Please, enter parameters for a new high-speed car: ");
-                        carService.add(scanner.nextLine());
+                        carService.add(carMapper.toModel(scanner.nextLine()));
                         continue;
                     case 3:
                         System.out.println("You have chosen an Option 3.");
                         System.out.println("Please, enter parameters for a new electric car: ");
-                        carService.add(scanner.nextLine());
+                        carService.add(carMapper.toModel(scanner.nextLine()));
                         continue;
                     case 4:
                         System.out.println("You have chosen an Option 4.");
                         System.out.println("Please, enter parameters for a new pickup car: ");
-                        carService.add(scanner.nextLine());
+                        carService.add(carMapper.toModel(scanner.nextLine()));
                         continue;
                     case 5:
                         System.out.println("You have chosen an Option 5.");
@@ -76,9 +83,17 @@ public class DataHandlerImpl implements DataHandler {
             } catch (InputMismatchException e) {
                 System.out.println("\nInvalid input! Please, enter a number! Try again!");
                 scanner.nextLine();
+                continue;
             }
             return;
         }
+    }
+
+    private void printAll(Map<String, LinkedList<Car>> cars) {
+        cars.values()
+                .stream()
+                .flatMap(LinkedList::stream)
+                .forEach(System.out::println);
     }
 
     private void printAllByBrand(List<Car> cars) {
