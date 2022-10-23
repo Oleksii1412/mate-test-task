@@ -4,7 +4,7 @@ import akishev.model.Car;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Repository;
 
@@ -35,27 +35,42 @@ public class CarDaoImpl implements CarDao {
     }
 
     @Override
-    public Optional<List<Car>> getAllByBrand(String brand) {
-        return Optional.of(cars.values()
+    public List<Car> getAllByBrand(String brand) {
+        isNull(brand);
+        return isEmpty(cars.values()
                 .stream()
                 .flatMap(LinkedList::stream)
                 .filter(car -> car.getBrand().equalsIgnoreCase(brand))
-                .collect(Collectors.toList()));
+                .collect(Collectors.toList()), brand);
     }
 
     @Override
-    public Optional<List<Car>> getAllByType(String type) {
-       return Optional.of(cars.entrySet()
+    public List<Car> getAllByType(String type) {
+        isNull(type);
+       return isEmpty(cars.entrySet()
                .stream()
                .filter(key -> parseToType(key.getKey()).equalsIgnoreCase(type))
                .map(Map.Entry::getValue)
                .flatMap(LinkedList::stream)
-               .collect(Collectors.toList()));
+               .collect(Collectors.toList()), type);
     }
 
     private String parseToType(String type) {
         String withSpaces = type.replaceAll(STRING_REGEX, " $1").trim();
         String substring = withSpaces.substring(0, withSpaces.lastIndexOf(" "));
         return substring.replaceAll(" ", "-");
+    }
+
+    private void isNull(String parameter) {
+        if (parameter == null) {
+            throw new RuntimeException("A parameter cannot be a null!");
+        }
+    }
+
+    private List<Car> isEmpty(List<Car> cars, String parameter) {
+        if (cars.isEmpty()) {
+            throw new NoSuchElementException("Couldn't find cars by input parameter: " + parameter);
+        }
+        return cars;
     }
 }

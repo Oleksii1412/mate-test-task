@@ -15,6 +15,7 @@ public class CarMapperImpl implements CarMapper {
 
     @Override
     public Car toModel(String line) {
+        isNull(line);
         int index = line.contains(" ") ? line.indexOf(" ") : 0;
         if (index != 0) {
             String header = line.substring(0, index);
@@ -31,5 +32,11 @@ public class CarMapperImpl implements CarMapper {
                 .findFirst().orElseThrow(
                         () -> new RuntimeException("Can't find enum "
                                 + "by input type: " + header));
+    }
+
+    private void isNull(String parameter) {
+        if (parameter == null) {
+            throw new RuntimeException("A parameter cannot be a null!");
+        }
     }
 }

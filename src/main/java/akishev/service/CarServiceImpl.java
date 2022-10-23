@@ -5,7 +5,6 @@ import akishev.model.Car;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -28,13 +27,12 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> getAllByBrand(String brand) {
-        return carDao.getAllByBrand(brand).orElseThrow(
-                () -> new NoSuchElementException("Couldn't find cars by input brand: " + brand));
+
+        return carDao.getAllByBrand(brand);
     }
 
     @Override
     public List<Car> getAllByType(String type) {
-        return carDao.getAllByType(type).orElseThrow(
-                () -> new NoSuchElementException("Couldn't find cars by input type: " + type));
+        return carDao.getAllByType(type);
     }
 }

@@ -11,7 +11,7 @@ public interface CarDao {
 
     Map<String, LinkedList<Car>> getAll();
 
-    Optional<List<Car>> getAllByBrand(String brand);
+    List<Car> getAllByBrand(String brand);
 
-    Optional<List<Car>> getAllByType(String type);
+    List<Car> getAllByType(String type);
 }
