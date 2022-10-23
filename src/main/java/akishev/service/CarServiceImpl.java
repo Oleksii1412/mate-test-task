@@ -27,7 +27,6 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> getAllByBrand(String brand) {
-
         return carDao.getAllByBrand(brand);
     }
 
