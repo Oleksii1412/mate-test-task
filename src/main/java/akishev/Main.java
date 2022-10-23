@@ -22,6 +22,7 @@ public class Main {
         FileReader fileReader = context.getBean(FileReader.class);
         List<String> data = fileReader.readFromFile(inputPathFile);
         CarMapper carMapper = context.getBean(CarMapper.class);
+
         List<Car> cars = data.stream()
                 .map(carMapper::toModel)
                 .collect(Collectors.toList());
