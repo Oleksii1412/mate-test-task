@@ -23,7 +23,7 @@ public class PickupCar extends Car {
         }
         if (pickupCar.getClass().equals(PickupCar.class)) {
             PickupCar current = (PickupCar) pickupCar;
-            return  Objects.equals(this.getBrand(), current.getBrand())
+            return Objects.equals(this.getBrand(), current.getBrand())
                     && Objects.equals(this.getModel(), current.getModel())
                     && Objects.equals(this.getAccelerationTime(), current.getAccelerationTime())
                     && Objects.equals(this.getTopSpeed(), current.getTopSpeed())

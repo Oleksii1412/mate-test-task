@@ -1,4 +1,3 @@
-C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\interaction\DataHandler.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\strategy\StrategyHandler.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\db\CarDaoImpl.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\model\ElectricCar.java
@@ -6,17 +5,20 @@ C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\db\CarDao.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\handler\PickupCarHandlerImpl.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\config\AppConfig.java
+C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\mapper\CarMapperImpl.java
+C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\interaction\AppInterfaceImpl.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\model\Car.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\model\HighSpeedCar.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\model\PickupCar.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\interaction\PathHandler.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\strategy\StrategyHandlerImpl.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\Main.java
-C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\interaction\DataHandlerImpl.java
+C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\interaction\AppInterface.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\reader\FileReaderImpl.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\reader\FileReader.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\handler\CarTypeHandler.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\handler\ElectricCarHandlerImpl.java
+C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\mapper\CarMapper.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\service\CarServiceImpl.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\interaction\PathHandlerImpl.java
 C:\Users\Oleksii\IdeaProjects\MateTestTask\mate-test-task\src\main\java\akishev\handler\HighSpeedCarHandlerImpl.java

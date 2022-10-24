@@ -46,12 +46,12 @@ public class CarDaoImpl implements CarDao {
     @Override
     public List<Car> getAllByType(String type) {
         if (!(type == null || type.isEmpty())) {
-        return isEmpty(cars.entrySet()
-               .stream()
-               .filter(key -> parseToType(key.getKey()).equalsIgnoreCase(type))
-               .map(Map.Entry::getValue)
-               .flatMap(LinkedList::stream)
-               .collect(Collectors.toList()), type);
+            return isEmpty(cars.entrySet()
+                    .stream()
+                    .filter(key -> parseToType(key.getKey()).equalsIgnoreCase(type))
+                    .map(Map.Entry::getValue)
+                    .flatMap(LinkedList::stream)
+                    .collect(Collectors.toList()), type);
         }
         throw new RuntimeException("An input parameter either empty or null!");
     }
