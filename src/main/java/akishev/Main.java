@@ -15,6 +15,7 @@ public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context
                 = new AnnotationConfigApplicationContext(AppConfig.class);
+
         PathHandler pathHandler = context.getBean(PathHandler.class);
         String inputPathFile = pathHandler.setInputFilePath();
         FileReader fileReader = context.getBean(FileReader.class);
