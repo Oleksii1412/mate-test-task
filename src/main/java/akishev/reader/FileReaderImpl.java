@@ -20,7 +20,7 @@ public class FileReaderImpl implements FileReader {
                 data.add(reader.readLine());
             }
         } catch (IOException e) {
-            throw new RuntimeException("Can't read from file: " + filePath, e);
+            throw new RuntimeException("Check path file! Can't read from file: " + filePath, e);
         }
         return data;
     }

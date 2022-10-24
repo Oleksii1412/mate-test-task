@@ -43,32 +43,32 @@ public class AppInterfaceImpl implements AppInterface {
                 scanner.nextLine();
                 switch (i) {
                     case 1:
-                        System.out.println("You have chosen an Option 1.");
+                        System.out.println("You have chose an Option 1.");
                         System.out.println("Here, you got the entire cars catalog: ");
                         printAll(carService.getAll());
                         continue;
                     case 2:
-                        System.out.println("You have chosen an Option 2.");
+                        System.out.println("You have chose an Option 2.");
                         System.out.println("Please, enter parameters for a new high-speed car: ");
                         carService.add(carMapper.toModel(scanner.nextLine()));
                         continue;
                     case 3:
-                        System.out.println("You have chosen an Option 3.");
+                        System.out.println("You have chose an Option 3.");
                         System.out.println("Please, enter parameters for a new electric car: ");
                         carService.add(carMapper.toModel(scanner.nextLine()));
                         continue;
                     case 4:
-                        System.out.println("You have chosen an Option 4.");
+                        System.out.println("You have chose an Option 4.");
                         System.out.println("Please, enter parameters for a new pickup car: ");
                         carService.add(carMapper.toModel(scanner.nextLine()));
                         continue;
                     case 5:
-                        System.out.println("You have chosen an Option 5.");
+                        System.out.println("You have chose an Option 5.");
                         System.out.println("Please, enter a brand name: ");
                         printAllByParameter(carService.getAllByBrand(scanner.nextLine()));
                         continue;
                     case 6:
-                        System.out.println("You have chosen an Option 6.");
+                        System.out.println("You have chose an Option 6.");
                         System.out.println("Please, enter a type name: ");
                         printAllByParameter(carService.getAllByType(scanner.nextLine()));
                         continue;

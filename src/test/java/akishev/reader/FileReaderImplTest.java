@@ -23,9 +23,9 @@ class FileReaderImplTest {
     public void readFromFile_ValidPath_Ok() {
         List<String> expected = new ArrayList<>();
         expected.add(EXISTENT_CAR_PARAMETER_PATTERN);
-        List<String> readFromFile = fileReader.readFromFile(VALID_PATH_OF_INPUT_FILE);
-        Assertions.assertNotNull(readFromFile);
-        Assertions.assertEquals(expected, readFromFile);
+        List<String> actual = fileReader.readFromFile(VALID_PATH_OF_INPUT_FILE);
+        Assertions.assertNotNull(actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test

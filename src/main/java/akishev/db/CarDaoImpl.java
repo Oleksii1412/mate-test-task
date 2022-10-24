@@ -33,35 +33,33 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public List<Car> getAllByBrand(String brand) {
-        isNull(brand);
-        return isEmpty(cars.values()
-                .stream()
-                .flatMap(LinkedList::stream)
-                .filter(car -> car.getBrand().equalsIgnoreCase(brand))
-                .collect(Collectors.toList()), brand);
+        if (!(brand == null || brand.isEmpty())) {
+            return isEmpty(cars.values()
+                    .stream()
+                    .flatMap(LinkedList::stream)
+                    .filter(car -> car.getBrand().equalsIgnoreCase(brand))
+                    .collect(Collectors.toList()), brand);
+        }
+        throw new RuntimeException("An input parameter either empty or null!");
     }
 
     @Override
     public List<Car> getAllByType(String type) {
-        isNull(type);
+        if (!(type == null || type.isEmpty())) {
         return isEmpty(cars.entrySet()
                .stream()
                .filter(key -> parseToType(key.getKey()).equalsIgnoreCase(type))
                .map(Map.Entry::getValue)
                .flatMap(LinkedList::stream)
                .collect(Collectors.toList()), type);
+        }
+        throw new RuntimeException("An input parameter either empty or null!");
     }
 
     private String parseToType(String type) {
         String withSpaces = type.replaceAll(STRING_REGEX, " $1").trim();
         String substring = withSpaces.substring(0, withSpaces.lastIndexOf(" "));
         return substring.replaceAll(" ", "-");
-    }
-
-    private void isNull(String parameter) {
-        if (parameter == null) {
-            throw new RuntimeException("A parameter cannot be a null!");
-        }
     }
 
     private List<Car> isEmpty(List<Car> cars, String parameter) {

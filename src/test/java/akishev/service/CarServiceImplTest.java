@@ -46,7 +46,7 @@ class CarServiceImplTest {
     }
 
     @Test
-    public void getAll_Ok() {
+    public void getAll_WithCar_Ok() {
         Mockito.when(carDao.getAll()).thenReturn(cars);
         Map<String, LinkedList<Car>> retrievedCars = carService.getAll();
         Assertions.assertNotNull(retrievedCars);

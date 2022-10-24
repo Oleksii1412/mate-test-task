@@ -47,7 +47,7 @@ class CarMapperImplTest {
     }
 
     @Test
-    public void toModel_NonExistentCarType_NotOk() {
+    public void toModel_NotExistentCarType_NotOk() {
         String line = "HYBRID Toyota; Rav4; 4.8; 250; 200; 110; 10";
         assertThrows(NoSuchElementException.class, () -> carMapper.toModel(line),
                 "NoSuchElementException to be thrown, but nothing was thrown");
