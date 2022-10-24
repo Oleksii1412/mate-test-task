@@ -16,11 +16,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = "akishev")
 public class AppConfig {
-
     @Bean
     public Map<String, LinkedList<Car>> createCarMap() {
         return new HashMap<>();
     }
+
     @Bean
     public Scanner createScanner() {
         return new Scanner(System.in);

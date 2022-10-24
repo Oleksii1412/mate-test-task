@@ -13,17 +13,14 @@ public class CarDaoImpl implements CarDao {
     private static final String STRING_REGEX = "([A-Z])";
     private final Map<String, LinkedList<Car>> cars;
 
-    public CarDaoImpl(Map<String,
-            LinkedList<Car>> cars) {
+    public CarDaoImpl(Map<String, LinkedList<Car>> cars) {
         this.cars = cars;
     }
 
     @Override
     public Car add(Car car) {
-        if (cars.computeIfAbsent(car.getClass().getSimpleName(),
+        if (!cars.computeIfAbsent(car.getClass().getSimpleName(),
                 c -> new LinkedList<>()).add(car)) {
-            return car;
-        } else {
             cars.get(car.getClass().getSimpleName()).add(car);
         }
         return car;
@@ -47,7 +44,7 @@ public class CarDaoImpl implements CarDao {
     @Override
     public List<Car> getAllByType(String type) {
         isNull(type);
-       return isEmpty(cars.entrySet()
+        return isEmpty(cars.entrySet()
                .stream()
                .filter(key -> parseToType(key.getKey()).equalsIgnoreCase(type))
                .map(Map.Entry::getValue)

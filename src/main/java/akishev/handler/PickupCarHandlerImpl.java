@@ -5,7 +5,6 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class PickupCarHandlerImpl implements CarTypeHandler {
-
     @Override
     public PickupCar toModel(String car) {
         PickupCar pickupCar = new PickupCar();

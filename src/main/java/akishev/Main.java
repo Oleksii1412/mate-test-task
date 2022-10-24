@@ -1,7 +1,7 @@
 package akishev;
 
 import akishev.config.AppConfig;
-import akishev.interaction.DataHandler;
+import akishev.interaction.AppInterface;
 import akishev.interaction.PathHandler;
 import akishev.mapper.CarMapper;
 import akishev.model.Car;
@@ -30,7 +30,7 @@ public class Main {
         CarService carService = context.getBean(CarService.class);
         cars.forEach(carService::add);
 
-        DataHandler dataHandler = context.getBean(DataHandler.class);
-        dataHandler.runApp();
+        AppInterface appInterface = context.getBean(AppInterface.class);
+        appInterface.runApp();
     }
 }

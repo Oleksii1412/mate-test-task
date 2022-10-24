@@ -68,10 +68,10 @@ public class ElectricCar extends Car {
     @Override
     public String toString() {
         return "ElectricCar{"
-                + "brand = '" + super.getBrand() + '\''
-                + ", model = '" + super.getModel() + '\''
-                + ", accelerationTime = " + super.getAccelerationTime()
-                + ", topSpeed = " + super.getTopSpeed()
+                + "brand = '" + this.getBrand() + '\''
+                + ", model = '" + this.getModel() + '\''
+                + ", accelerationTime = " + this.getAccelerationTime()
+                + ", topSpeed = " + this.getTopSpeed()
                 + ", range = " + range
                 + ", batteryCapacity = " + batteryCapacity
                 + ", batteryWarranty = " + batteryWarranty

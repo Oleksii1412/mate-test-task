@@ -1,5 +1,5 @@
 package akishev.interaction;
 
-public interface DataHandler {
+public interface AppInterface {
     void runApp();
 }

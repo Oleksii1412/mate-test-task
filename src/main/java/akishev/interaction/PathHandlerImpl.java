@@ -15,7 +15,7 @@ public class PathHandlerImpl implements PathHandler {
         System.out.println("\nHello! This is a car service application which "
                 + "gives to you opportunity work with the cars catalogue.");
         System.out.println("Could you be so kind and provide a file path to get an input data.\n");
-        System.out.println("Please, type your path then press enter, as e.g: /input.txt");
+        System.out.println("Please, type your path then press enter, as e.g: src/main/resources/cars.txt");
         System.out.println("Enter path here: ");
         return scanner.nextLine();
     }

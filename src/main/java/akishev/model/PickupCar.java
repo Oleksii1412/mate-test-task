@@ -46,10 +46,10 @@ public class PickupCar extends Car {
     @Override
     public String toString() {
         return "PickupCar{"
-                + "brand = '" + super.getBrand() + '\''
-                + ", model = '" + super.getModel() + '\''
-                + ", accelerationTime = " + super.getAccelerationTime()
-                + ", topSpeed = " + super.getTopSpeed()
+                + "brand = '" + this.getBrand() + '\''
+                + ", model = '" + this.getModel() + '\''
+                + ", accelerationTime = " + this.getAccelerationTime()
+                + ", topSpeed = " + this.getTopSpeed()
                 + ", fuelConsumption = " + fuelConsumption
                 + '}';
     }

@@ -11,14 +11,14 @@ import java.util.Scanner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DataHandlerImpl implements DataHandler {
+public class AppInterfaceImpl implements AppInterface {
     private final CarService carService;
     private final CarMapper carMapper;
     private final Scanner scanner;
 
-    public DataHandlerImpl(CarService carService,
-                           CarMapper carMapper,
-                           Scanner scanner) {
+    public AppInterfaceImpl(CarService carService,
+                            CarMapper carMapper,
+                            Scanner scanner) {
         this.carService = carService;
         this.carMapper = carMapper;
         this.scanner = scanner;
@@ -27,7 +27,7 @@ public class DataHandlerImpl implements DataHandler {
     @Override
     public void runApp() {
         System.out.println("Data was successfully read from the input file.\n");
-        System.out.println("Now, you are able to work with the cars catalogue! ");
+        System.out.println("Now, you are able to work with the cars catalogue!");
         while (true) {
             System.out.println("\nPlease, make your choice:\n");
             System.out.println("1. Show the entire cars catalog\n"
@@ -65,19 +65,19 @@ public class DataHandlerImpl implements DataHandler {
                     case 5:
                         System.out.println("You have chosen an Option 5.");
                         System.out.println("Please, enter a brand name: ");
-                        printAllByBrand(carService.getAllByBrand(scanner.nextLine()));
+                        printAllByParameter(carService.getAllByBrand(scanner.nextLine()));
                         continue;
                     case 6:
                         System.out.println("You have chosen an Option 6.");
                         System.out.println("Please, enter a type name: ");
-                        printAllByType(carService.getAllByType(scanner.nextLine()));
+                        printAllByParameter(carService.getAllByType(scanner.nextLine()));
                         continue;
                     case 7:
                         System.out.println("Good bye!");
                         break;
                     default:
                         System.out.println("\nYou didn't choose a correct variant! "
-                                + "Please try again! Enter number from 1 to 7!");
+                                + "Please try again! Enter a number from 1 to 7!");
                         continue;
                 }
             } catch (InputMismatchException e) {
@@ -96,11 +96,7 @@ public class DataHandlerImpl implements DataHandler {
                 .forEach(System.out::println);
     }
 
-    private void printAllByBrand(List<Car> cars) {
-        cars.forEach(System.out::println);
-    }
-
-    private void printAllByType(List<Car> cars) {
+    private void printAllByParameter(List<Car> cars) {
         cars.forEach(System.out::println);
     }
 }

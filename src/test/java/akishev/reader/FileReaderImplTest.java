@@ -1,42 +1,44 @@
 package akishev.reader;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.file.Path;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class FileReaderImplTest {
     private static final String EXISTENT_CAR_PARAMETER_PATTERN
             = "ELECTRIC NISSAN; LEAF; 5.2; 220; 350; 60; 4";
-    private static final String PATH_OF_INPUT_FILE = "input.txt";
+    private static final String VALID_PATH_OF_INPUT_FILE = "src/test/resources/input.txt";
+    private static final String INVALID_PATH_OF_INPUT_FILE = "test/resources/input.txt";
     private static FileReader fileReader;
-    private static Path path;
 
     @BeforeAll
     static void beforeAll() {
-        path = Path.of(PATH_OF_INPUT_FILE);
         fileReader = new FileReaderImpl();
     }
 
     @Test
-    public void readFromFile_Ok() {
-        /*List<String> expected = new ArrayList<>();
+    public void readFromFile_ValidPath_Ok() {
+        List<String> expected = new ArrayList<>();
         expected.add(EXISTENT_CAR_PARAMETER_PATTERN);
-        String filePath = new File("/input.txt").getAbsolutePath();
-        List<String> readFromFile = fileReader.readFromFile();
+        List<String> readFromFile = fileReader.readFromFile(VALID_PATH_OF_INPUT_FILE);
         Assertions.assertNotNull(readFromFile);
-        Assertions.assertEquals(expected, readFromFile);*/
+        Assertions.assertEquals(expected, readFromFile);
     }
 
+    @Test
+    public void readFromFile_NullPath_NotOk() {
+        assertThrows(RuntimeException.class,
+                () -> fileReader.readFromFile(null),
+                "RuntimeException to be thrown, but nothing was thrown");
+    }
+
+    @Test
+    public void readFromFile_InvalidPath_NotOk() {
+        assertThrows(RuntimeException.class,
+                () -> fileReader.readFromFile(INVALID_PATH_OF_INPUT_FILE),
+                "RuntimeException to be thrown, but nothing was thrown");
+    }
 }

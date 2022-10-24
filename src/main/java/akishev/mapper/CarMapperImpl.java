@@ -16,13 +16,14 @@ public class CarMapperImpl implements CarMapper {
 
     @Override
     public Car toModel(String line) {
-        isNull(line);
-        int index = line.contains(" ") ? line.indexOf(" ") : 0;
-        if (index != 0) {
-            String header = line.substring(0, index);
-            String car = line.substring(index).trim();
-            Car.CarType carType = getCarType(header);
-            return strategyHandler.getTypeHandler(carType).toModel(car);
+        if (line != null) {
+            int index = line.contains(" ") ? line.indexOf(" ") : 0;
+            if (index != 0) {
+                String header = line.substring(0, index);
+                String car = line.substring(index).trim();
+                Car.CarType carType = getCarType(header);
+                return strategyHandler.getTypeHandler(carType).toModel(car);
+            }
         }
         throw new RuntimeException("Inputted parameters are invalid! " + line
         + ". Use a 'space' after car Type, and after "
@@ -35,11 +36,5 @@ public class CarMapperImpl implements CarMapper {
                 .findFirst().orElseThrow(
                         () -> new NoSuchElementException("Can't find enum "
                                 + "by input type: " + header));
-    }
-
-    private void isNull(String parameter) {
-        if (parameter == null) {
-            throw new RuntimeException("A parameter cannot be a null!");
-        }
     }
 }
